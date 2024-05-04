@@ -220,7 +220,7 @@ if __name__ == "__main__":
     env.snake_speed = 10
     agent = AgentDiscretePPO()
     agent.init(512,6,4)
-    agent.act.load_state_dict(torch.load('act_weight.pkl'))
+    agent.act.load_state_dict(torch.load('PYTHON\\DRL4Snake\\act_weight.pkl'))
     for _ in range(15):
         o = env.reset()
         # for _ in range(500):

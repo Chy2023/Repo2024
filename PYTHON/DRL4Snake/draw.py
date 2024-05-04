@@ -1,4 +1,3 @@
-#!/usr/bin/python
 # -*- coding: utf-8 -*-
 # Time: 2021-3-29
 # Author: ZYunfei
@@ -17,7 +16,7 @@ class Painter:
             self.data = pd.DataFrame(columns=['episode reward','episode', 'Method'])
         else:
             self.load_dir = load_dir
-            if os.path.exists(self.load_dir):
+            if True:
                 print("==正在读取{}。".format(self.load_dir))
                 self.data = pd.read_csv(self.load_dir).iloc[:,1:] # csv文件第一列是index，不用取。
                 print("==读取完毕。")
@@ -52,7 +51,7 @@ class Painter:
                 dataToAppend = {'episode reward':dataSeries[i],'episode':x[i],'Method':method}
             else:
                 dataToAppend = {'episode reward':dataSeries[i],'episode':i+1,'Method':method}
-            self.data = self.data.append(dataToAppend,ignore_index = True)
+            self.data = self.data._append(dataToAppend,ignore_index = True)
 
     def drawFigure(self,style="darkgrid"):
         """
