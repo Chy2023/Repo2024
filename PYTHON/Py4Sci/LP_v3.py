@@ -40,5 +40,5 @@ class Solution:
         print(cost)
         return X,b_eq,cost
 
-sol=Solution(3,3,10,[2,2,2],[2,2,2],np.array([[1,0,0],[0,1,1],[0,0,1]]))
-sol.Solve()
+""" sol=Solution(3,3,10,[2,2,2],[2,2,2],np.array([[1,0,0],[0,1,1],[0,0,1]]))
+sol.Solve() """
