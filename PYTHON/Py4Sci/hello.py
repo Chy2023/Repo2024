@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 from LP_v3 import *
+from PIL import Image
 
 @ st.cache_data
 def convert_df(df):
@@ -105,7 +106,8 @@ $$
 &emsp;&emsp;将原问题建模成图网络如下：
 
 ''')
-st.image(r'PYTHON\Py4Sci\graph.jpeg')
+image=Image.open(r'PYTHON\Py4Sci\graph.jpeg')
+st.image(image,caption='图网络')
 st.markdown(r'''&emsp;&emsp;图中共分为源点、机型、代理商、汇点四层结构，节点的值表示编号，存货量通过源点到机型的边控制，代理商配额上限通过代理商到汇点的边控制，代理商需求、运输费用由机型到代理商的边控制，每条边的流量表示商品的配额。
 
 &emsp;&emsp;直观的理解：可将每个点看作水龙头，每条边看作水管；除了源点和汇点外，每个水龙头的流入量等于流出量，且水管中的流量不能超过上限。
@@ -121,7 +123,8 @@ st.markdown(r'''&emsp;&emsp;图中共分为源点、机型、代理商、汇点�
 2. 残留网络：设图中的任意一条弧为<u,v>，则该弧的容量=容量-流量，同时增加反向弧<v,u>，反向弧的容量=流量。直观上来说，反向弧实际上代表“反悔”机制：过去选择了某条弧，现在可以选择其反向弧来撤销过去的选择。
 
 ''')
-st.image(r'PYTHON\Py4Sci\image-3.png')
+image=Image.open(r'PYTHON\Py4Sci\image-3.png')
+st.image(image,caption='残差图')
 st.markdown(r'''&emsp;&emsp;Dinic算法的求解步骤如下：
 1. 初始化网络及流量。
 2. 通过BFS构造残留网络、层次网络，若汇点不在层次网络中，则结束。
