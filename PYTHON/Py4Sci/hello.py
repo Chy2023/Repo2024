@@ -106,7 +106,7 @@ $$
 &emsp;&emsp;将原问题建模成图网络如下：
 
 ''')
-image=Image.open(r'PYTHON\Py4Sci\graph.jpeg')
+image=Image.open('PYTHON/Py4Sci/graph.jpeg')
 st.image(image,caption='图网络')
 st.markdown(r'''&emsp;&emsp;图中共分为源点、机型、代理商、汇点四层结构，节点的值表示编号，存货量通过源点到机型的边控制，代理商配额上限通过代理商到汇点的边控制，代理商需求、运输费用由机型到代理商的边控制，每条边的流量表示商品的配额。
 
@@ -123,7 +123,7 @@ st.markdown(r'''&emsp;&emsp;图中共分为源点、机型、代理商、汇点�
 2. 残留网络：设图中的任意一条弧为<u,v>，则该弧的容量=容量-流量，同时增加反向弧<v,u>，反向弧的容量=流量。直观上来说，反向弧实际上代表“反悔”机制：过去选择了某条弧，现在可以选择其反向弧来撤销过去的选择。
 
 ''')
-image=Image.open(r'PYTHON\Py4Sci\image-3.png')
+image=Image.open(r'PYTHON/Py4Sci/image-3.png')
 st.image(image,caption='残差图')
 st.markdown(r'''&emsp;&emsp;Dinic算法的求解步骤如下：
 1. 初始化网络及流量。
